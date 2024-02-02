@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function UserCardComponent({
   userImage,
   userName,
@@ -20,9 +22,9 @@ function UserCardComponent({
           <p>{`${city} ${state} ${country}`}</p>
         </div>
 
-
-        <button>Visit Profile</button>
-
+        <Link to={`/user/${userName}`}>
+          <button>Visit Profile</button>
+        </Link>
       </div>
     </>
   );

@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 import MainContainerComponent from "./container/MainContainerComponent";
 import RightContainer from "./container/RightContainer";
 import SidebarComponent from "./components/SidebarComponent";
 import UserListComponent from "./components/UserListComponent";
-import "./App.scss";
+import UserDetailPage from "./view/UserDetailPage";
+import MobileSidebar from "./components/MobileSidebar"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -36,26 +42,38 @@ function App() {
         user.name.last.toLowerCase().includes(query.toLowerCase()) ||
         user.location.city.toLowerCase().includes(query.toLowerCase()) ||
         user.location.country.toLowerCase().includes(query.toLowerCase()) ||
-        user.location.state.toLowerCase().includes(query.toLowerCase())
+        user.location.state.toLowerCase().includes(query.toLowerCase()) ||
+        user.gender.toLowerCase() === query.toLowerCase()
     );
 
     setFilteredUsers(filteredResults);
   };
 
   return (
-    <>
-      <MainContainerComponent>
-        <SidebarComponent onSearch={handleSearch} />
-        <RightContainer>
-          <UserListComponent
-            users={users}
-            filteredUsers={filteredUsers}
-            fetchData={fetchData}
-            hasMore={hasMore}
-          />
-        </RightContainer>
-      </MainContainerComponent>
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainContainerComponent>
+              <SidebarComponent onSearch={handleSearch} />
+              <RightContainer>
+                <UserListComponent
+                  users={users}
+                  filteredUsers={filteredUsers}
+                  fetchData={fetchData}
+                  hasMore={hasMore}
+                />
+              </RightContainer>
+            </MainContainerComponent>
+          }
+        />
+        <Route
+          path="/user/:userId"
+          element={<UserDetailPage users={users}/>}
+        />
+      </Routes>
+    </Router>
   );
 }
 
