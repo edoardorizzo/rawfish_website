@@ -9,12 +9,20 @@ function UserCardComponent({
   return (
     <>
       <div className="user_card_container">
-        <div className="image_container">
-          <img src={userImage} alt="" />
+        <div className="left_card">
+          <div className="image_container">
+            <img src={userImage} alt="" />
+          </div>
+          <h4>{`${userName} ${userSurname}`}</h4>
         </div>
-        <h4>{userName}</h4>
-        <h4>{userSurname}</h4>
-        <p>{`${city} ${state} ${country}`}</p>
+
+        <div className="center_card">
+          <p>{`${city} ${state} ${country}`}</p>
+        </div>
+
+
+        <button>Visit Profile</button>
+
       </div>
     </>
   );

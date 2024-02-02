@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import MainContainerComponent from "./container/MainContainerComponent";
+import RightContainer from "./container/RightContainer";
+import SidebarComponent from "./components/SidebarComponent";
 import UserListComponent from "./components/UserListComponent";
-import SearchBarComponent from "./components/SearchBarComponent";
 import "./App.scss";
 
 function App() {
@@ -43,14 +44,16 @@ function App() {
 
   return (
     <>
-      <SearchBarComponent onSearch={handleSearch} />
       <MainContainerComponent>
-        <UserListComponent
-          users={users}
-          filteredUsers={filteredUsers}
-          fetchData={fetchData}
-          hasMore={hasMore}
-        />
+        <SidebarComponent onSearch={handleSearch} />
+        <RightContainer>
+          <UserListComponent
+            users={users}
+            filteredUsers={filteredUsers}
+            fetchData={fetchData}
+            hasMore={hasMore}
+          />
+        </RightContainer>
       </MainContainerComponent>
     </>
   );
