@@ -22,7 +22,7 @@ function UserDetailDataComponent({
             <img src={userImage} alt="" />
           </div>
           <div className="center_detail_card">
-            <h2>{userName}</h2>
+            <h1>{userName}</h1>
 
             <div className="center_detail_card_data">
               <div className="gender">

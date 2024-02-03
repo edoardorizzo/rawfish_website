@@ -1,0 +1,135 @@
+@import "./partials/color.scss";
+
+/* SidebarComponent */
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    background-color: $background_dark;
+    padding: 24px;
+  }
+  
+  /* SearchBarComponent */
+  
+  .search_bar {
+    .site_logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      .site_image {
+        display: flex;
+        width: 80px;
+  
+        img {
+          width: 100%;
+          filter: invert(100%);
+        }
+      }
+  
+      label {
+        font-weight: 700;
+        color: $white;
+        text-align: right;
+      }
+    }
+  
+    input {
+      padding: 16px;
+      height: 32px;
+      width: 100%;
+      border-radius: 16px;
+      border: none;
+      background-color: $white;
+    }
+  
+    p {
+      color: $white;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+  }
+  
+  /* UserCardComponent */
+  
+  .user_card_container {
+    padding: 8px;
+    background-color: $background_grey;
+    color: $white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  
+    .left_card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+  
+      .image_container {
+        width: 40px;
+  
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  
+    button {
+      background-color: $primary;
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+      color: $white;
+      font-weight: 700;
+    }
+  }
+  
+  .infinite-scroll-component {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Mobile sidebar*/
+  
+  .mobile_search_bar {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $background_dark;
+    position: fixed;
+    .site_logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      .site_image {
+        width: 60px;
+        img {
+          width: 100%;
+          filter: invert(100%);
+        }
+      }
+      label {
+        font-weight: 700;
+        color: $white;
+        text-align: right;
+      }
+    }
+  
+    input {
+      padding: 16px;
+      height: 32px;
+      width: 100%;
+      border-radius: 16px;
+      border: none;
+      background-color: $white;
+    }
+  }
+

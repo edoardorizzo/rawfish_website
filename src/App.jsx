@@ -1,3 +1,4 @@
+import "./AppStyle.scss";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
