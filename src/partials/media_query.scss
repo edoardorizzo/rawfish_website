@@ -1,56 +1,58 @@
 @import "./color.scss";
 
 @media (max-width: 1000px) {
-    .right_container {
-      margin-left: 0px;
-      margin-top: 120px;
-    }
+  .right_container {
+    margin-left: 0px;
+    margin-top: 120px;
+  }
+
+  .sidebar{
+    width: 100%;
+    height: auto;
+  }
+
+  .search_bar{
+    .site_logo{
+      margin-bottom: 16px;
+      .site_image {
+        display: flex;
+        width: 60px;
   
-    .sidebar{
-      width: 100%;
-      height: auto;
-    }
-  
-    .search_bar{
-      .site_logo{
-        margin-bottom: 16px;
-        .site_image {
-          display: flex;
-          width: 60px;
-    
-          img {
-            width: 100%;
-            filter: invert(100%);
-          }
-        }
-      }
-      p{
-        display: none;
-        width: 100%;
-      }
-    }
-  
-    .user_card_container{
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 16px;
-  
-      .left_card{
-        .image_container{
-          width: 80px;
-        }
-  
-        h4{
-          font-size: 25px;
-        }
-      }
-  
-      a{
-        width: 100%;
-  
-        button{
+        img {
           width: 100%;
+          filter: invert(100%);
         }
+      }
+    }
+    p{
+      display: none;
+      width: 100%;
+    }
+  }
+
+  .user_card_container{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+
+    .left_card{
+      .image_container{
+        width: 80px;
+      }
+
+      h4{
+        font-size: 25px;
+      }
+    }
+
+
+
+    a{
+      width: 100%;
+
+      button{
+        width: 100%;
       }
     }
   }
+}

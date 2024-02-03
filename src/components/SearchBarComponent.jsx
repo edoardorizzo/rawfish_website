@@ -8,7 +8,7 @@ function SearchBarComponent({ onSearch }) {
     <div className="search_bar">
       <div className="site_logo">
         <div className="site_image">
-          <img src="../../public/rawfish-logo.png" alt="" />
+          <img src="/rawfish-logo.png" alt="" />
         </div>
         <label>RAWFISH FINDER</label>
       </div>

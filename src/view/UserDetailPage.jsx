@@ -24,7 +24,6 @@ function UserDetailPage({ users }) {
           userNat={user.nat}
           userCell={user.cell}
         />
-        
       </div>
     </>
   );
