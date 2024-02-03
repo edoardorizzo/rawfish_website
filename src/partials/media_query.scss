@@ -6,51 +6,75 @@
     margin-top: 120px;
   }
 
-  .sidebar{
+  .sidebar {
     width: 100%;
     height: auto;
   }
 
-  .search_bar{
-    .site_logo{
+  .search_bar {
+    .site_logo {
       margin-bottom: 16px;
       .site_image {
         display: flex;
         width: 60px;
-  
+
         img {
           width: 100%;
           filter: invert(100%);
         }
       }
     }
-    p{
+    p {
       display: none;
       width: 100%;
     }
   }
 
-  .user_card_container{
+  .user_card_container {
     flex-direction: column;
     align-items: flex-start;
     padding: 16px;
 
-    .left_card{
-      .image_container{
+    .left_card {
+      .image_container {
         width: 80px;
       }
 
-      h4{
+      h4 {
         font-size: 25px;
       }
     }
-
-
-
-    a{
+    a {
       width: 100%;
 
-      button{
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .user_detail_data {
+    .center_row {
+      .user_detail_data_image{
+        img{
+          width: 75%;
+        }
+      }
+      .center_detail_card {
+        .center_detail_card_data{
+          display: block;
+
+          div{
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+
+    .bottom_row{
+      flex-direction: column;
+      gap: 16px;
+      .data_container_box_component{
         width: 100%;
       }
     }

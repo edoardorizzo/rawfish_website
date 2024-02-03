@@ -20,11 +20,6 @@
   padding: 24px;
   background-color: $background_grey;
   border-radius: 40px;
-  .user_detail_data_image {
-    img {
-      border-radius: 50%;
-    }
-  }
 
   .top_row {
     margin-bottom: 24px;
@@ -35,6 +30,12 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    .user_detail_data_image {
+      img {
+        border-radius: 50%;
+      }
+    }
 
     .center_detail_card {
       h4 {
@@ -73,3 +74,6 @@
     }
   }
 }
+
+
+@import "../partials/media_query.scss";
