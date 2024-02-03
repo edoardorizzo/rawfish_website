@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../view/UserDetailPageStyle.scss";
+import "../../partials/UserDetailPageStyle.scss";
 
 function BackComponent() {
   return (

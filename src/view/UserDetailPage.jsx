@@ -1,6 +1,6 @@
-import "./UserDetailPageStyle.scss";
+import "../partials/UserDetailPageStyle.scss";
 import UserDetailDataComponent from "../components/UserDetailDataComponent";
-import BackComponent from "../components/BackComponent";
+import BackComponent from "../components/buttons/BackComponent";
 import { useParams } from "react-router-dom";
 
 function UserDetailPage({ users }) {

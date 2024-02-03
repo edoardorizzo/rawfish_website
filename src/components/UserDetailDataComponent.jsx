@@ -1,4 +1,4 @@
-import "../view/UserDetailPageStyle.scss";
+import "../partials/UserDetailPageStyle.scss";
 
 function UserDetailDataComponent({
   userImage,

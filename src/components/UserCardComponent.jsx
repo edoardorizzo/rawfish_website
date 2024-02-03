@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PrimaryButton from "./buttons/PrimaryBUttonComponent";
 
 function UserCardComponent({
   userImage,
@@ -23,7 +24,9 @@ function UserCardComponent({
         </div>
 
         <Link to={`/user/${userName}`}>
-          <button>Visit Profile</button>
+          <PrimaryButton
+          buttonText={"Visit Profile"}
+          />
         </Link>
       </div>
     </>

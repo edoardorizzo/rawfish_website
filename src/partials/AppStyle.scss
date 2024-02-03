@@ -1,4 +1,4 @@
-@import "./partials/color.scss";
+@import "./color.scss";
 
 /* SidebarComponent */
 
@@ -77,15 +77,6 @@
           border-radius: 50%;
         }
       }
-    }
-  
-    button {
-      background-color: $primary;
-      padding: 8px;
-      border: none;
-      border-radius: 8px;
-      color: $white;
-      font-weight: 700;
     }
   }
   

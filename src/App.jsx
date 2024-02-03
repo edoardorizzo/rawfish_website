@@ -1,4 +1,4 @@
-import "./AppStyle.scss";
+import "./partials/AppStyle.scss";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -6,11 +6,10 @@ import {
   Route
 } from "react-router-dom";
 import MainContainerComponent from "./container/MainContainerComponent";
-import RightContainer from "./container/RightContainer";
+import RightContainerComponent from "./container/RightContainerComponent";
 import SidebarComponent from "./components/SidebarComponent";
 import UserListComponent from "./components/UserListComponent";
 import UserDetailPage from "./view/UserDetailPage";
-import MobileSidebar from "./components/MobileSidebar"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -58,14 +57,14 @@ function App() {
           element={
             <MainContainerComponent>
               <SidebarComponent onSearch={handleSearch} />
-              <RightContainer>
+              <RightContainerComponent>
                 <UserListComponent
                   users={users}
                   filteredUsers={filteredUsers}
                   fetchData={fetchData}
                   hasMore={hasMore}
                 />
-              </RightContainer>
+              </RightContainerComponent>
             </MainContainerComponent>
           }
         />

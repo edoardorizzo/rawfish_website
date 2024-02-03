@@ -1,4 +1,4 @@
-import './ContainerComponentStyle.scss'
+import "../partials/ContainerComponentStyle.scss";
 
 function MainContainerComponent({children}) {
     return(
