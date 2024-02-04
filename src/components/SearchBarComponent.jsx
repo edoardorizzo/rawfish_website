@@ -1,4 +1,5 @@
 function SearchBarComponent({ onSearch }) {
+  
   const handleSearch = (event) => {
     const query = event.target.value;
     onSearch(query);

@@ -2,7 +2,8 @@ import "./partials/AppStyle.scss";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { fetchUsers } from "./js/api";
-//import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setUsers } from "./js/userSlice";
 import MainContainerComponent from "./container/MainContainerComponent";
 import RightContainerComponent from "./container/RightContainerComponent";
 import SidebarComponent from "./components/SidebarComponent";
@@ -10,9 +11,9 @@ import UserListComponent from "./components/UserListComponent";
 import UserDetailPage from "./view/UserDetailPage";
 
 function App() {
-  /* const users = useSelector((state) => state.user.users); */
+  const users = useSelector((state) => state.user.users);
+  const dispatch = useDispatch();
 
-  const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [hasMore, setHasMore] = useState(true);
 
@@ -22,7 +23,7 @@ function App() {
       if (results.length === 0) {
         setHasMore(false);
       } else {
-        setUsers([...users, ...results]);
+        dispatch(setUsers([...users, ...results]))
       }
     } catch (error) {
       console.error("Errore", error);
