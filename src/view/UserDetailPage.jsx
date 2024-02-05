@@ -1,6 +1,7 @@
 import "../partials/UserDetailPageStyle.scss";
 import UserDetailDataComponent from "../components/UserDetailDataComponent";
 import BackComponent from "../components/buttons/BackComponent";
+import AccordionComponent from "../components/AccordionComponent";
 import { useParams } from "react-router-dom";
 
 function UserDetailPage({ users }) {
@@ -10,22 +11,21 @@ function UserDetailPage({ users }) {
   const userName = `${user.name.title} ${user.name.first} ${user.name.last}`;
 
   return (
-    <>
-      <div className="user_detail_page">
+    <div className="user_detail_page">
       <BackComponent></BackComponent>
-        <UserDetailDataComponent
-          userImage={user.picture.large}
-          userGender={user.gender}
-          userName={userName}
-          userEmail={user.email}
-          userNumber={user.cell}
-          userId={user.id.name}
-          userIdValue={user.id.value}
-          userNat={user.nat}
-          userCell={user.cell}
-        />
-      </div>
-    </>
+      <UserDetailDataComponent
+        userImage={user.picture.large}
+        userGender={user.gender}
+        userName={userName}
+        userEmail={user.email}
+        userNumber={user.cell}
+        userId={user.id.name}
+        userIdValue={user.id.value}
+        userNat={user.nat}
+        userCell={user.cell}
+      />
+      {/* <AccordionComponent /> */}
+    </div>
   );
 }
 

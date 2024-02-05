@@ -7,20 +7,32 @@ export const userSlice = createSlice({
     users: [],
     filteredUsers: [],
     hasMore: true,
+    isFetching: false, // Nuova variabile di stato
   },
   reducers: {
     setUsers: (state, action) => {
       state.users = [...state.users, ...action.payload];
+      state.isFetching = false; // Imposta isFetching a false dopo aver ricevuto i dati
+    },
+    setIsFetching: (state, action) => {
+      state.isFetching = action.payload;
     },
   },
 });
 
-export const { setUsers } = userSlice.actions;
+export const { setUsers, setIsFetching } = userSlice.actions;
 
-export const fetchUsersWithCache = (results) => async (dispatch) => {
+export const fetchUsersWithCache = (results) => async (dispatch, getState) => {
+  const { user } = getState();
+
+  if (user.isFetching) {
+    return;
+  }
+
   try {
+    dispatch(setIsFetching(true));
     const cachedData = await fetchUsers(results);
-    console.log(`Fetched data for ${results} results:`, cachedData);
+    console.log(cachedData);
     dispatch(setUsers(cachedData));
   } catch (error) {
     console.error("Error fetching users:", error);

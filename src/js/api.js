@@ -11,7 +11,7 @@ export const fetchUsers = async (results = 50) => {
     const { results: fetchedResults } = await res.json();
 
     cache[results] = fetchedResults;
-    console.log(`Data for ${results} results saved in cache:`, fetchedResults);
+
 
     return fetchedResults;
   } catch (error) {
