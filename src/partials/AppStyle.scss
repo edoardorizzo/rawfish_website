@@ -8,11 +8,6 @@
   width: 320px;
   background-color: $background_dark;
   padding: 24px;
-}
-
-/* SearchBarComponent */
-
-.search_bar {
   .site_logo {
     display: flex;
     justify-content: space-between;
@@ -21,7 +16,6 @@
     .site_image {
       display: flex;
       width: 80px;
-
       img {
         width: 100%;
         filter: invert(100%);
@@ -31,10 +25,13 @@
     label {
       font-weight: 700;
       color: $white;
-      text-align: right;
     }
   }
+}
 
+/* SearchBarComponent */
+
+.search_bar {
   input {
     padding: 16px;
     height: 32px;
