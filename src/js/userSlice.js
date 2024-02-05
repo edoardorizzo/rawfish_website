@@ -7,12 +7,12 @@ export const userSlice = createSlice({
     users: [],
     filteredUsers: [],
     hasMore: true,
-    isFetching: false, // Nuova variabile di stato
+    isFetching: false,
   },
   reducers: {
     setUsers: (state, action) => {
       state.users = [...state.users, ...action.payload];
-      state.isFetching = false; // Imposta isFetching a false dopo aver ricevuto i dati
+      state.isFetching = false;
     },
     setIsFetching: (state, action) => {
       state.isFetching = action.payload;
