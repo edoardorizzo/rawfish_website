@@ -1,9 +1,9 @@
 @import "../partials/color.scss";
 
 .back_container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   .back_link {
     color: $primary;
   }
@@ -20,13 +20,13 @@
   padding: 24px;
   background-color: $background_grey;
   border-radius: 40px;
+  margin-bottom: 40px;
 
   .top_row {
     margin-bottom: 24px;
   }
 
   .center_row {
-    margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 24px;
@@ -66,14 +66,51 @@
     .data_container_box_component {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 8px;
       background-color: $background_light_grey;
       border-radius: 24px;
       padding: 24px;
-      width: 280px;
+      width: calc(100% / 3 - 16px);
     }
   }
 }
 
+.accordion {
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: $background_grey;
+  border-radius: 24px;
+  padding: 24px;
+  .accordion_item {
+    .accordion_title {
+      color: $primary;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .accordion_content {
+      color: $white;
+      margin-top: 16px;
+      ul {
+        li {
+          margin-bottom: 8px;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
+
+.active,
+.accordion:hover {
+  background-color: $background_light_grey;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
 
 @import "../partials/mediaQuery.scss";

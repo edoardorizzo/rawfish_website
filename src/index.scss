@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -17,6 +18,10 @@ h2{
   font-size: 20px;
 }
 
+hr{
+  margin: 24px 0;
+  color: $background_light_grey;
+}
 
 /* Media query */
 
