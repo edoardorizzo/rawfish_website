@@ -1,6 +1,7 @@
 import "./partials/AppStyle.scss";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { fetchUsersWithCache } from "./js/userSlice";
 import { fetchUsers } from "./js/api";
 import { useSelector, useDispatch } from "react-redux";
 import { setUsers } from "./js/userSlice";
@@ -19,12 +20,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const results = await fetchUsers();
-      if (results.length === 0) {
-        setHasMore(false);
-      } else {
-        dispatch(setUsers([...users, ...results]))
-      }
+      dispatch(fetchUsersWithCache());
     } catch (error) {
       console.error("Errore", error);
     }
@@ -32,7 +28,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   const handleSearch = (query) => {
     const filteredResults = users.filter(
