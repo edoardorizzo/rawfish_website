@@ -32,7 +32,6 @@ export const fetchUsersWithCache = (results) => async (dispatch, getState) => {
   try {
     dispatch(setIsFetching(true));
     const cachedData = await fetchUsers(results);
-    console.log(cachedData);
     dispatch(setUsers(cachedData));
   } catch (error) {
     console.error("Error fetching users:", error);
