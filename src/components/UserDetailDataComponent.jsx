@@ -1,5 +1,4 @@
 import "../partials/UserDetailPageStyle.scss";
-import { useState } from "react";
 
 function UserDetailDataComponent({
   userImage,

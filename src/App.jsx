@@ -25,8 +25,6 @@ function App() {
     dispatch(fetchUsersWithCache());
   }, [dispatch]);
 
-  
-
   return (
     <Router>
       <Routes>
