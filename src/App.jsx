@@ -11,7 +11,6 @@ import UserDetailPage from "./view/UserDetailPage";
 
 function App() {
   const users = useSelector((state) => state.user.users);
-  const filteredUsers = useSelector((state) => state.user.filteredUsers);
   const dispatch = useDispatch();
 
   const fetchData = async () => {
@@ -26,9 +25,7 @@ function App() {
     dispatch(fetchUsersWithCache());
   }, [dispatch]);
 
-  const handleSearch = (query) => {
-    dispatch(searchUsers({ query }));
-  };
+  
 
   return (
     <Router>
@@ -37,11 +34,10 @@ function App() {
           path="/"
           element={
             <MainContainerComponent>
-              <SidebarComponent onSearch={handleSearch} />
+              <SidebarComponent/>
               <RightContainerComponent>
                 <UserListComponent
                   users={users}
-                  filteredUsers={filteredUsers}
                   fetchData={fetchData}
                 />
               </RightContainerComponent>

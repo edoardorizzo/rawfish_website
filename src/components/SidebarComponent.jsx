@@ -1,6 +1,6 @@
 import SearchBarComponent from "./SearchBarComponent";
 
-function SidebarComponent({ onSearch }) {
+function SidebarComponent() {
   return (
     <>
       <div className="sidebar">
@@ -10,7 +10,7 @@ function SidebarComponent({ onSearch }) {
           </div>
           <label>RAWFISH FINDER</label>
         </div>
-        <SearchBarComponent onSearch={onSearch} />
+        <SearchBarComponent/>
       </div>
     </>
   );

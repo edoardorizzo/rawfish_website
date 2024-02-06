@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 import UserCardComponent from "./UserCardComponent";
 
-function UserListComponent({ users, filteredUsers, fetchData }) {
+function UserListComponent({ users, fetchData }) {
+  const filteredUsers = useSelector((state) => state.user.filteredUsers);
+
   return (
     <InfiniteScroll
       dataLength={users.length}
