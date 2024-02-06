@@ -1,12 +1,12 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import UserCardComponent from "./UserCardComponent";
 
-function UserListComponent({ users, filteredUsers, fetchData, hasMore }) {
+function UserListComponent({ users, filteredUsers, fetchData }) {
   return (
     <InfiniteScroll
       dataLength={users.length}
       next={fetchData}
-      hasMore={hasMore}
+      hasMore={true}
       loader={<h4>Loading...</h4>}
     >
       {(filteredUsers.length > 0 ? filteredUsers : users).map((user, index) => (

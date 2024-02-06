@@ -17,10 +17,22 @@ export const userSlice = createSlice({
     setIsFetching: (state, action) => {
       state.isFetching = action.payload;
     },
+    filterUsers: (state, action) => {
+      const { query } = action.payload;
+      state.filteredUsers = state.users.filter(
+        (user) =>
+          user.name.first.toLowerCase().includes(query.toLowerCase()) ||
+          user.name.last.toLowerCase().includes(query.toLowerCase()) ||
+          user.location.city.toLowerCase().includes(query.toLowerCase()) ||
+          user.location.country.toLowerCase().includes(query.toLowerCase()) ||
+          user.location.state.toLowerCase().includes(query.toLowerCase()) ||
+          user.gender.toLowerCase() === query.toLowerCase()
+      );
+    },
   },
 });
 
-export const { setUsers, setIsFetching } = userSlice.actions;
+export const { setUsers, setIsFetching, filterUsers } = userSlice.actions;
 
 export const fetchUsersWithCache = (results) => async (dispatch, getState) => {
   const { user } = getState();

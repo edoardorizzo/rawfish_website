@@ -1,8 +1,13 @@
-function SearchBarComponent({ onSearch }) {
-  
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterUsers } from '../js/userSlice';
+
+function SearchBarComponent() {
+  const dispatch = useDispatch();
+
   const handleSearch = (event) => {
     const query = event.target.value;
-    onSearch(query);
+    dispatch(filterUsers({ query }));
   };
 
   return (
