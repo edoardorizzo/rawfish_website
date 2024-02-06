@@ -1,8 +1,7 @@
 import "./partials/AppStyle.scss";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { fetchUsersWithCache } from "./js/userSlice";
-import { filterUsers } from "./js/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import MainContainerComponent from "./container/MainContainerComponent";
 import RightContainerComponent from "./container/RightContainerComponent";
